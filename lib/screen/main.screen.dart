@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:queappli/screen/chat.screen.dart';
 
 class TabModel {
   TabModel({this.title, this.icon, this.body});
@@ -37,6 +38,8 @@ List<TabModel> tabs = <TabModel>[
 _goToChat(context) {
   Navigator.pushNamed(context, '/chat');
 }
+
+
 
 class MainScreen extends StatelessWidget {
   @override
