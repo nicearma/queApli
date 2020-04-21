@@ -11,7 +11,17 @@ class TabModel {
 }
 
 List<TabModel> tabs = <TabModel>[
-  TabModel(title: 'Photos', icon: Icons.camera, body: Text('TODO: Camera')),
+  TabModel(
+      title: 'Photos',
+      icon: Icons.camera,
+      body: new Builder(builder: (context) {
+        return GestureDetector(
+            onTap: () {
+              _goToPhoto(context);
+            },
+            child: Text('Hello')
+        );
+      })),
   TabModel(
       title: 'Chats',
       icon: Icons.chat,
@@ -39,6 +49,13 @@ _goToChat(context) {
   Navigator.pushNamed(context, '/chat');
 }
 
+_goToPhoto(context) {
+  Navigator.pushNamed(context, '/camera');
+}
+
+_goToContacts(context) {
+  Navigator.pushNamed(context, '/contacts');
+}
 
 
 class MainScreen extends StatelessWidget {
@@ -73,6 +90,12 @@ class MainScreen extends StatelessWidget {
                   child: tab.body,
                 );
               }).toList(),
-            )));
+            ),
+            floatingActionButton: FloatingActionButton(
+              onPressed: () => _goToContacts(context),
+              tooltip: 'Increment Counter',
+              child: const Icon(Icons.add),
+            )
+        ));
   }
 }

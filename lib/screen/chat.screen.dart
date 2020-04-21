@@ -79,7 +79,11 @@ class ChatScreen extends StatelessWidget {
                   child: Form(
                     child: Column(
                       children: <Widget>[
-                        TextFormField(),
+                        TextFormField(
+                          onChanged: (value) {
+
+                          },
+                        ),
                         RaisedButton(
                           onPressed: () {
                             FocusScope.of(context).unfocus();

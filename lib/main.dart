@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:queappli/screen/camera.screen.dart';
 import 'package:queappli/screen/chat.screen.dart';
+import 'package:queappli/screen/contacts.screen.dart';
 import 'package:queappli/screen/main.screen.dart';
 
+
 void main() {
+
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(MyApp());
 }
 
@@ -30,7 +36,9 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         '/': (context) => MainScreen(),
-        '/chat': (context) => ChatScreen()
+        '/chat': (context) => ChatScreen(),
+        '/camera': (context) => CameraScreen(),
+        '/contacts': (context) => ContactsScreen()
       },
       initialRoute: '/',
     );
