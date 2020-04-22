@@ -10,7 +10,7 @@ part of 'contacts.screen.dart';
 
 mixin _$ContactsStore on _ContactsStore, Store {
   final _$contactPermissionGrantedAtom =
-      Atom(name: '_ContactsState.contactPermissionGranted');
+      Atom(name: '_ContactsStore.contactPermissionGranted');
 
   @override
   bool get contactPermissionGranted {
@@ -29,7 +29,7 @@ mixin _$ContactsStore on _ContactsStore, Store {
         name: '${_$contactPermissionGrantedAtom.name}_set');
   }
 
-  final _$contactsAtom = Atom(name: '_ContactsState.contacts');
+  final _$contactsAtom = Atom(name: '_ContactsStore.contacts');
 
   @override
   ObservableList<Contact> get contacts {

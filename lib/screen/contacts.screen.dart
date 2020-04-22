@@ -74,7 +74,15 @@ class ContactsState extends State<ContactsScreen> {
                   builder: (_) => ListView.builder(
                       itemCount: _contacts.contacts.length,
                       itemBuilder: (context, index) {
-                        return Text(_contacts.contacts[index].displayName);
+
+                        return Card(
+                          child: ListTile(
+                            leading: FlutterLogo(size: 56.0),
+                            title: Text(_contacts.contacts[index].displayName),
+                            subtitle: Text(_contacts.contacts[index].identifier),
+                          ),
+                        );
+
                       }));
             } else {
               // Otherwise, display a loading indicator.
@@ -84,3 +92,5 @@ class ContactsState extends State<ContactsScreen> {
         ));
   }
 }
+
+

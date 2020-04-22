@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:queappli/screen/camera.screen.dart';
 import 'package:queappli/screen/chat.screen.dart';
+import 'package:queappli/screen/configuration.screen.dart';
 import 'package:queappli/screen/contacts.screen.dart';
-import 'package:queappli/screen/main.screen.dart';
+import 'package:queappli/screen/home.screen.dart';
+
 
 
 void main() {
@@ -35,10 +37,11 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       routes: {
-        '/': (context) => MainScreen(),
+        '/': (context) => HomeScreen(),
         '/chat': (context) => ChatScreen(),
         '/camera': (context) => CameraScreen(),
-        '/contacts': (context) => ContactsScreen()
+        '/contacts': (context) => ContactsScreen(),
+        '/configuration' : (context) => ConfigurationScreen(),
       },
       initialRoute: '/',
     );

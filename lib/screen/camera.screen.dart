@@ -1,5 +1,3 @@
-// Ensure that plugin services are initialized so that `availableCameras()`
-// can be called before `runApp()`
 import 'dart:io';
 
 import 'package:camera/camera.dart';
@@ -8,27 +6,6 @@ import 'package:flutter/widgets.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 
-Future<bool> haveCameras() async {
-  final cameras = await availableCameras();
-  return cameras.length > 0;
-}
-
-Future<CameraDescription> getFirstCamera() async {
-  final cameras = await availableCameras();
-  return cameras.first;
-}
-
-Future<CameraDescription> getNextCamera(CameraDescription currentCamera) async {
-  final cameras = await availableCameras();
-
-  var indexOfCurrentCamera = cameras.indexOf(currentCamera);
-
-  if (indexOfCurrentCamera > cameras.length - 1) {
-    return cameras.first;
-  }
-
-  return cameras[indexOfCurrentCamera + 1];
-}
 
 // A screen that allows users to take a picture using a given camera.
 class CameraScreen extends StatefulWidget {
@@ -54,7 +31,7 @@ class CameraState extends State<CameraScreen> {
 
   chargeCamera() async {
 
-    var firstCamera = await getFirstCamera();
+    var firstCamera = await _getFirstCamera();
 
     setState(() {
       _controller = CameraController(
@@ -149,4 +126,29 @@ class DisplayPictureScreen extends StatelessWidget {
       body: Image.file(File(imagePath)),
     );
   }
+}
+
+
+
+
+Future<bool> _haveCameras() async {
+  final cameras = await availableCameras();
+  return cameras.length > 0;
+}
+
+Future<CameraDescription> _getFirstCamera() async {
+  final cameras = await availableCameras();
+  return cameras.first;
+}
+
+Future<CameraDescription> _getNextCamera(CameraDescription currentCamera) async {
+  final cameras = await availableCameras();
+
+  var indexOfCurrentCamera = cameras.indexOf(currentCamera);
+
+  if (indexOfCurrentCamera > cameras.length - 1) {
+    return cameras.first;
+  }
+
+  return cameras[indexOfCurrentCamera + 1];
 }
