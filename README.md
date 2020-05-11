@@ -26,7 +26,7 @@ At this moment:
 * Options
     * Only the page
 
-#TODO:
+## TODO:
 
 * Add maps (https://pub.dev/packages/google_maps_flutter or https://github.com/johnpryan/flutter_map)
 * Add video recording (with camera plugin)
@@ -36,7 +36,7 @@ At this moment:
 * Work in the style
 * Add some encryption
 
-#Ideas:
+## Ideas:
 
 * Add destroy message after x time (like mission impossibles messages)
 * Create private and uniques encryption keys to share with unique user
@@ -44,11 +44,11 @@ At this moment:
  can be illegal in most countries)
 * Try https://github.com/cloudwebrtc/flutter-webrtc to make P2P communication (possible in mobile?)
 
-#How to generate code from mobx annotations:
+## How to generate code from mobx annotations:
 
-flutter packages pub run build_runner build
+flutter packages pub run build_runner build --delete-conflicting-outputs
 
-#How to run
+## How to run
 
 You have two way to do it, with Android studio or direct with flutter cli
 
@@ -66,7 +66,7 @@ By Android studio:
 * Select the device and main.dart file
 * Play run (you have to wait several minutes, this is normal with flutter)
 
-#Disclaimer
+## Disclaimer
 
 WhatsApp is one trend mark, i'm only using the application ideas like reference to learn flutter, other chat application have the same ideas, style, etc.
 

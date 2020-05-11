@@ -12,7 +12,7 @@ List<TabModel> tabs = <TabModel>[
   TabModel(
       title: 'Photos',
       icon: Icons.camera,
-      body: new Builder(builder: (context) {
+      body: Builder(builder: (context) {
         return GestureDetector(
             onTap: () {
               _goToPhoto(context);
@@ -39,8 +39,21 @@ List<TabModel> tabs = <TabModel>[
         },
       )),
   TabModel(title: 'Status', icon: Icons.search, body: Text('TODO: Status')),
-  TabModel(title: 'Calls', icon: Icons.access_alarms, body: Text('TODO: Calls'))
+  TabModel(
+      title: 'Calls',
+      icon: Icons.access_alarms,
+      body: Builder(builder: (context) {
+        return GestureDetector(
+            onTap: () {
+              _goToCall(context);
+            },
+            child: Text('Go TO calls'));
+      }))
 ];
+
+_goToCall(context) {
+  Navigator.pushNamed(context, '/call');
+}
 
 _goToChat(context) {
   Navigator.pushNamed(context, '/chat');

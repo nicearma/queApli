@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:queappli/screen/call.screen.dart';
 import 'package:queappli/screen/camera.screen.dart';
 import 'package:queappli/screen/chat.screen.dart';
 import 'package:queappli/screen/configuration.screen.dart';
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
         // This makes the visual density adapt to the platform that you run
         // the app on. For desktop platforms, the controls will be smaller and
         // closer together (more dense) than on mobile platforms.
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+        //visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       routes: {
         '/': (context) => HomeScreen(),
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
         '/camera': (context) => CameraScreen(),
         '/contacts': (context) => ContactsScreen(),
         '/configuration' : (context) => ConfigurationScreen(),
+        '/call': (context) => CallScreen()
       },
       initialRoute: '/',
     );
